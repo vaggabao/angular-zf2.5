@@ -1,0 +1,24 @@
+<header>
+  <div class="container container-sm">
+    <div class="row top-nav">
+      <div class="col-md-12">
+        <a routerLink="/">
+          <img src="/assets/img/logo.jpg" width="300" />
+        </a>
+      </div>
+      <div class="col-md-12 text-right">
+        <ng-container *ngIf="customer; else logoutState">
+          <span>Welcome Back {{ firstName }}</span>
+          &nbsp;|&nbsp;
+          <a routerLink="" (click)="onLogout()">Logout</a>
+        </ng-container>
+        <ng-template #logoutState>
+          <a routerLink="/login">Login</a>
+        </ng-template>
+        &nbsp;|&nbsp;
+        <a routerLink="/cart">Cart</a>
+      </div>
+    </div>
+    <hr />
+  </div>
+</header>

@@ -1,0 +1,39 @@
+.site-btn-secondary {
+    border-radius: 0;
+    padding: 16px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    border: none;
+    color: @brandSecondaryBtnTxtColor;
+    background-color: @brandSecondaryBtnBgColor;
+    border: 1px solid @brandSecondaryBtnBorderColor;
+    &:hover,
+    &:focus:hover,
+    &:active:hover {
+        outline: none;
+        color: @brandSecondaryBtnHoverTxtColor;
+        background-color: @brandSecondaryBtnHoverBgColor;
+        border-color: @brandSecondaryBtnHoverBorderColor;
+    }
+    &:focus,
+    &:active,
+    &:active:focus {
+        outline: none;
+        color: @brandSecondaryBtnTxtColor;
+        background-color: @brandSecondaryBtnBgColor;
+        border-color: @brandSecondaryBtnBorderColor;
+    }
+    &:disabled {
+        color: @brandSecondaryDisabledBtnTxtColor;
+        background-color: @brandSecondaryDisabledBtnBgColor;
+        border-color: @brandSecondaryDisabledBtnBorderColor;
+        &:hover,
+        &:focus {
+            outline: none;
+            color: @brandSecondaryDisabledBtnHoverTxtColor;
+            background-color: @brandSecondaryDisabledBtnHoverBgColor;
+            border-color: @brandSecondaryDisabledBtnHoverBorderColor;
+        }
+    }
+}

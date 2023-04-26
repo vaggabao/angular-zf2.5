@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "http://local.zf.com:8080",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

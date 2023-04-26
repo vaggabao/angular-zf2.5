@@ -1,0 +1,30 @@
+<form id="form-login" [formGroup]="loginForm" (ngSubmit)="submit()">
+    <div class="form-group">
+        <label for="input-login-email">Email</label>
+        <input type="text" id="input-login-email" class="form-control" formControlName="email" />
+        <input-error-message
+            *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched || submitErrors['email']"
+            [inputErrors]="loginForm.get('email').errors" [errorDefs]="validationMessages.email"
+            [manualError]="submitErrors['email']">
+        </input-error-message>
+    </div>
+    <div class="form-group">
+        <label for="input-login-password">Password</label>
+        <input type="password" id="input-login-password" class="form-control" formControlName="password" />
+        <input-error-message
+            *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched || submitErrors['password']"
+            [inputErrors]="loginForm.get('password').errors" [errorDefs]="validationMessages.password"
+            [manualError]="submitErrors['password']">
+        </input-error-message>
+    </div>
+    <div class="text-center" *ngIf="submitErrors['login']">
+        <span class="input-error-message">
+            {{submitErrors['login']}}
+        </span>
+    </div>
+    <div class="text-center">
+        <button type="submit" id="btn-login" class="btn btn-success btn-lg" [disabled]="!enableSubmitBtn">
+            Login
+        </button>
+    </div>
+</form>

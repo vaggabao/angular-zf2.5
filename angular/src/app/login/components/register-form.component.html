@@ -1,0 +1,61 @@
+<form id="form-register" [formGroup]="registerForm" (ngSubmit)="submit()">
+    <div class="form-group">
+        <label for="input-email">Email</label>
+        <input type="text" id="input-email" class="form-control" formControlName="email" />
+        <input-error-message
+            *ngIf="registerForm.get('email').invalid && registerForm.get('email').touched || submitErrors['email']"
+            [inputErrors]="registerForm.get('email').errors" [errorDefs]="validationMessages.email"
+            [manualError]="submitErrors['email']">
+        </input-error-message>
+    </div>
+    <div class="form-group">
+        <label for="input-password">Password</label>
+        <input type="password" id="input-password" class="form-control" formControlName="password" />
+        <input-error-message
+            *ngIf="registerForm.get('password').invalid && registerForm.get('password').touched || submitErrors['password']"
+            [inputErrors]="registerForm.get('password').errors" [errorDefs]="validationMessages.password"
+            [manualError]="submitErrors['password']">
+        </input-error-message>
+    </div>
+    <div class="form-group">
+        <label for="input-confirm-password">Confirm Password</label>
+        <input type="password" id="input-confirm-password" class="form-control" formControlName="confirm_password" />
+        <input-error-message
+            *ngIf="registerForm.get('confirm_password').invalid && registerForm.get('confirm_password').touched || submitErrors['confirm_password']"
+            [inputErrors]="registerForm.get('confirm_password').errors"
+            [errorDefs]="validationMessages.confirm_password" [manualError]="submitErrors['confirm_password']">
+        </input-error-message>
+    </div>
+    <div class="form-group">
+        <label for="input-company-name">Company Name</label>
+        <input type="text" id="input-company-name" class="form-control" formControlName="company_name" />
+        <input-error-message
+            *ngIf="registerForm.get('company_name').invalid && registerForm.get('company_name').touched || submitErrors['company_name']"
+            [inputErrors]="registerForm.get('company_name').errors" [errorDefs]="validationMessages.company_name"
+            [manualError]="submitErrors['company_name']">
+        </input-error-message>
+    </div>
+    <div class="form-group">
+        <label for="input-first-name">First Name</label>
+        <input type="text" id="input-first-name" class="form-control" formControlName="first_name" />
+        <input-error-message
+            *ngIf="registerForm.get('first_name').invalid && registerForm.get('first_name').touched || submitErrors['first_name']"
+            [inputErrors]="registerForm.get('first_name').errors" [errorDefs]="validationMessages.first_name"
+            [manualError]="submitErrors['first_name']">
+        </input-error-message>
+    </div>
+    <div class="form-group">
+        <label for="input-last-name">Last Name</label>
+        <input type="text" id="input-last-name" class="form-control" formControlName="last_name" />
+        <input-error-message
+            *ngIf="registerForm.get('last_name').invalid && registerForm.get('last_name').touched || submitErrors['last_name']"
+            [inputErrors]="registerForm.get('last_name').errors" [errorDefs]="validationMessages.last_name"
+            [manualError]="submitErrors['last_name']">
+        </input-error-message>
+    </div>
+    <div class="text-center">
+        <button type="submit" id="btn-register" class="btn btn-success btn-lg" [disabled]="!enableSubmitBtn">
+            Register
+        </button>
+    </div>
+</form>

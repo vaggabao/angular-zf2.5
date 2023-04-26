@@ -1,0 +1,46 @@
+.site-btn-icon-tertiary {
+    border-radius: 0;
+    padding: 16px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    line-height: 24px;
+    border: none;
+    color: @brandTertiaryBtnIconTxtColor;
+    background-color: @brandTertiaryBtnIconBgColor;
+    border: 1px solid @brandTertiaryBtnIconBorderColor;
+    &:hover,
+    &:focus:hover,
+    &:active:hover {
+        outline: none;
+        color: @brandTertiaryBtnIconHoverTxtColor;
+        background-color: @brandTertiaryBtnIconHoverBgColor;
+        border-color: @brandTertiaryBtnIconHoverBorderColor;
+    }
+    &:focus,
+    &:active,
+    &:active:focus {
+        outline: none;
+        color: @brandTertiaryBtnIconTxtColor;
+        background-color: @brandTertiaryBtnIconBgColor;
+        border-color: @brandTertiaryBtnIconBorderColor;
+    }
+    &:disabled {
+        color: @brandTertiaryDisabledBtnIconTxtColor;
+        background-color: @brandTertiaryDisabledBtnIconBgColor;
+        border-color: @brandTertiaryDisabledBtnIconBorderColor;
+        &:hover,
+        &:focus {
+            outline: none;
+            color: @brandTertiaryDisabledBtnIconHoverTxtColor;
+            background-color: @brandTertiaryDisabledBtnIconHoverBgColor;
+            border-color: @brandTertiaryDisabledBtnIconHoverBorderColor;
+        }
+    }
+    .btn-icon {
+        font-size: 24px;
+        width: 24px;
+        line-height: 24px;
+        margin-right: 8px;
+    }
+}

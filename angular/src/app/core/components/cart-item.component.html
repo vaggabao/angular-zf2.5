@@ -1,0 +1,29 @@
+<div class="cart-item cart-item-{{item['cart_item_id']}}">
+    <div class="row">
+        <div class="col-md-6 text-center">
+            <img src="{{imagePath}}/img/products/thumb/{{item['product_thumbnail']}}" alt="{{item['product_name']}}"
+                width="100%">
+        </div>
+        <div class="col-md-10">
+            <p>
+                <strong>{{item['product_name']}}</strong>
+            </p>
+            <p>
+                {{item['product_desc']}}
+            </p>
+            <p>
+                {{item['product_price'] | currency}} each
+            </p>
+        </div>
+        <div class="col-md-4">
+            <p class="text-center">
+                {{item['qty']}}
+            </p>
+        </div>
+        <div class="col-md-3">
+            <p class="text-right">
+                {{item['price'] | currency}}
+            </p>
+        </div>
+    </div>
+</div>

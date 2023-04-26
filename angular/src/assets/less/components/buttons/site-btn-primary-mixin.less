@@ -1,0 +1,48 @@
+.site-btn-primary() {
+    border-radius: 0;
+    padding: 16px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    line-height: 1;
+    color: @brandPrimaryBtnTxtColor;
+    background-color: @brandPrimaryBtnBgColor;
+    border-color: @brandPrimaryBtnBorderColor;
+    -webkit-transition: all 250ms ease-in-out;
+    &:hover,
+    &:focus:hover,
+    &:active:hover {
+        outline: none;
+        color: @brandPrimaryBtnHoverTxtColor;
+        background-color: @brandPrimaryBtnHoverBgColor;
+        border-color: @brandPrimaryBtnHoverBorderColor;
+    }
+    &:focus,
+    &:active,
+    &:active:focus {
+        outline: none;
+        color: @brandPrimaryBtnTxtColor;
+        background-color: @brandPrimaryBtnBgColor;
+        border-color: @brandPrimaryBtnBorderColor;
+    }
+    &:disabled {
+        color: @brandPrimaryDisabledBtnTxtColor;
+        background-color: @brandPrimaryDisabledBtnBgColor;
+        border-color: @brandPrimaryDisabledBtnBorderColor;
+        &:hover,
+        &:focus {
+            outline: none;
+            color: @brandPrimaryDisabledBtnHoverTxtColor;
+            background-color: @brandPrimaryDisabledBtnHoverBgColor;
+            border-color: @brandPrimaryDisabledBtnHoverBorderColor;
+        }
+    }
+    &:focus-visible,
+    &:focus-visible:hover {
+        outline: auto 5px !important;
+        outline: -webkit-focus-ring-color auto 5px !important;
+        outline-offset: 5px;
+        background-color: @brandPrimaryBtnHoverBgColor;
+        border-color: @brandPrimaryBtnHoverBorderColor;
+    }
+}

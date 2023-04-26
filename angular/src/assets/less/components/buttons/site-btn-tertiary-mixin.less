@@ -1,0 +1,39 @@
+.site-btn-tertiary() {
+    border-radius: 0;
+    padding: 16px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+    line-height: 1;
+    color: @brandTertiaryBtnTxtColor;
+    background-color: @brandTertiaryBtnBgColor;
+    border: 1px solid @brandTertiaryBtnBorderColor;
+    &:hover,
+    &:focus:hover,
+    &:active:hover {
+        outline: none;
+        color: @brandTertiaryBtnHoverTxtColor;
+        background-color: @brandTertiaryBtnHoverBgColor;
+        border-color: @brandTertiaryBtnHoverBorderColor;
+    }
+    &:focus,
+    &:active,
+    &:active:focus {
+        outline: none;
+        color: @brandTertiaryBtnTxtColor;
+        background-color: @brandTertiaryBtnBgColor;
+        border-color: @brandTertiaryBtnBorderColor;
+    }
+    &:disabled {
+        color: @brandTertiaryDisabledBtnTxtColor;
+        background-color: @brandTertiaryDisabledBtnBgColor;
+        border-color: @brandTertiaryDisabledBtnBorderColor;
+        &:hover,
+        &:focus {
+            outline: none;
+            color: @brandTertiaryDisabledBtnHoverTxtColor;
+            background-color: @brandTertiaryDisabledBtnHoverBgColor;
+            border-color: @brandTertiaryDisabledBtnHoverBorderColor;
+        }
+    }
+}

@@ -1,0 +1,113 @@
+<div class="page-container page-login-container">
+    <div class="page-title">Shipping</div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-16">
+            <form id="form-shipping" [formGroup]="shippingForm" (ngSubmit)="submit()">
+                <div class="form-group">
+                    <label for="input-name">Name</label>
+                    <input type="text" id="input-name" class="form-control" formControlName="name" />
+                    <input-error-message
+                        *ngIf="shippingForm.get('name').invalid && shippingForm.get('name').touched || submitErrors['name']"
+                        [inputErrors]="shippingForm.get('name').errors" [errorDefs]="validationMessages.name"
+                        [manualError]="submitErrors['name']">
+                    </input-error-message>
+                </div>
+                <div class="form-group">
+                    <label for="input-address1">Address 1</label>
+                    <input type="text" id="input-address1" class="form-control" formControlName="address1" />
+                    <input-error-message
+                        *ngIf="shippingForm.get('address1').invalid && shippingForm.get('address1').touched || submitErrors['address1']"
+                        [inputErrors]="shippingForm.get('address1').errors" [errorDefs]="validationMessages.address1"
+                        [manualError]="submitErrors['address1']">
+                    </input-error-message>
+                </div>
+                <div class="form-group">
+                    <label for="input-address2">Address 2</label>
+                    <input type="text" id="input-address2" class="form-control" formControlName="address2" />
+                    <input-error-message
+                        *ngIf="shippingForm.get('address2').invalid && shippingForm.get('address2').touched || submitErrors['address2']"
+                        [inputErrors]="shippingForm.get('address2').errors" [errorDefs]="validationMessages.address2"
+                        [manualError]="submitErrors['address2']">
+                    </input-error-message>
+                </div>
+                <div class="form-group">
+                    <label for="input-address3">Address 3</label>
+                    <input type="text" id="input-address3" class="form-control" formControlName="address3" />
+                    <input-error-message
+                        *ngIf="shippingForm.get('address3').invalid && shippingForm.get('address3').touched || submitErrors['address3']"
+                        [inputErrors]="shippingForm.get('address3').errors" [errorDefs]="validationMessages.address3"
+                        [manualError]="submitErrors['address3']">
+                    </input-error-message>
+                </div>
+                <div class="form-group">
+                    <label for="input-city">City</label>
+                    <input type="text" id="input-city" class="form-control" formControlName="city" />
+                    <input-error-message
+                        *ngIf="shippingForm.get('city').invalid && shippingForm.get('city').touched || submitErrors['city']"
+                        [inputErrors]="shippingForm.get('city').errors" [errorDefs]="validationMessages.city"
+                        [manualError]="submitErrors['city']">
+                    </input-error-message>
+                </div>
+                <div class="form-group">
+                    <label for="input-state">State</label>
+                    <input type="text" id="input-state" class="form-control" formControlName="state" />
+                    <input-error-message
+                        *ngIf="shippingForm.get('state').invalid && shippingForm.get('state').touched || submitErrors['state']"
+                        [inputErrors]="shippingForm.get('state').errors" [errorDefs]="validationMessages.state"
+                        [manualError]="submitErrors['state']">
+                    </input-error-message>
+                </div>
+                <div class="form-group">
+                    <label for="input-country">Country</label>
+                    <input type="text" id="input-country" class="form-control" formControlName="country" />
+                    <input-error-message
+                        *ngIf="shippingForm.get('country').invalid && shippingForm.get('country').touched || submitErrors['country']"
+                        [inputErrors]="shippingForm.get('country').errors" [errorDefs]="validationMessages.country"
+                        [manualError]="submitErrors['country']">
+                    </input-error-message>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="option-shipping-1" value="Ground"
+                                    formControlName="shipping_method" checked />
+                                Ground Shipping
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-16" style="padding-top: 10px;">
+                        <span>
+                            <strong>{{shippingOptions.ground | currency}}</strong>
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" id="option-shipping-2" value="Expedited"
+                                    formControlName="shipping_method" />
+                                Expedited Shipping
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-16" style="padding-top: 10px;">
+                        <span>
+                            <strong>{{shippingOptions.expedited | currency}}</strong>
+                        </span>
+                    </div>
+                </div>
+                <div class="text-center" style="margin-top: 50px;">
+                    <div id="error-submit" class="input-error >"></div>
+                    <button type="submit" id="btn-continue" class="btn btn-success btn-lg"
+                        [disabled]="!enableSubmitBtn">
+                        Continue
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>

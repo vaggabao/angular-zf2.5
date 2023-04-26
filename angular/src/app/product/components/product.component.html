@@ -1,0 +1,57 @@
+<div class="page-container page-product-container">
+    <div class="product product-{{product.product_id}}">
+        <input type="hidden" id="input-product-id" value="{{product.product_id}}" />
+        <input type="hidden" id="input-product-price" value="{{product.price}}" />
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <img class="product-image" src="{{imagePath}}/img/products/{{product.product_image}}"
+                    alt="{{product.product_name}}">
+            </div>
+            <div class="col-md-12 product-details">
+                <div class="row">
+                    <label class="col-xs-8 text-right">Product Name: </label>
+                    <span class="col-xs-12">{{product.product_name}}</span>
+                </div>
+                <div class="row">
+                    <label class="col-xs-8 text-right">Product Description: </label>
+                    <span class="col-xs-12">{{product.product_desc}}</span>
+                </div>
+                <div class="row">
+                    <label class="col-xs-8 text-right">Unit Price: </label>
+                    <span class="col-xs-12">
+                        <span>{{product.price | currency}}</span>
+                    </span>
+                </div>
+                <div class="row">
+                    <label class="col-xs-8 text-right">Quantity: </label>
+                    <span class="col-xs-12">
+                        <input type="number" id="input-qty" class="form-control input-sm input-qty" min="0"
+                            [max]="product.stock_qty" [disabled]="product.stock_qty <= 0" [(ngModel)]="qty"
+                            (keyup)="qtyOnChange()" />
+                    </span>
+                </div>
+                <div class="row row-total-price">
+                    <label class="col-xs-8 text-right">Price: </label>
+                    <span class="col-xs-12 text-large">
+                        <strong>
+                            <span id="total-price">{{totalPrice | currency}}</span>
+                        </strong>
+                    </span>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 text-right">
+                        <ng-container *ngIf="product.stock_qty > 0; else outOfStock">
+                            <button type="button" id="btn-add-to-cart" class="btn btn-success btn-large"
+                                (click)="addToCart()" [disabled]="disableAddToCartBtn">
+                                Add to Cart
+                            </button>
+                        </ng-container>
+                        <ng-template #outOfStock>
+                            <span class="product-oos">Out of Stock</span>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
