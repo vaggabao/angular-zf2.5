@@ -1,0 +1,91 @@
+<?php
+    $this->inlineScript()->prependFile($this->basePath('js/helpers.js'));
+    $this->inlineScript()->prependFile($this->basePath('js/shipping.js'));
+?>
+
+<div class="page-container page-login-container">
+    <div class="page-title">Shipping</div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <form id="form-shipping">
+                <div class="form-group">
+                    <label for="input-name">Name</label>
+                    <input type="text" id="input-name" class="form-control" />
+                    <div id="error-name" class="input-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="input-address1">Address 1</label>
+                    <input type="text" id="input-address1" class="form-control" />
+                    <div id="error-address1" class="input-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="input-address2">Address 2</label>
+                    <input type="text" id="input-address2" class="form-control" />
+                    <div id="error-address2" class="input-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="input-address3">Address 3</label>
+                    <input type="text" id="input-address3" class="form-control" />
+                    <div id="error-address3" class="input-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="input-city">City</label>
+                    <input type="text" id="input-city" class="form-control" />
+                    <div id="error-city" class="input-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="input-state">State</label>
+                    <input type="text" id="input-state" class="form-control" />
+                    <div id="error-state" class="input-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="input-country">Country</label>
+                    <input type="text" id="input-country" class="form-control" />
+                    <div id="error-country" class="input-error"></div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" 
+                                        name="option_shipping"
+                                        id="option-shipping-1"
+                                        value="Ground"
+                                        checked />
+                                Ground Shipping
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-8" style="padding-top: 10px;">
+                        <span><strong>$<?= number_format($shipping_options['ground'], 2); ?></strong></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" 
+                                        name="option_shipping"
+                                        id="option-shipping-2"
+                                        value="Expedited" />
+                                Expedited Shipping
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-8" style="padding-top: 10px;">
+                        <span><strong>$<?= number_format($shipping_options['expedited'], 2); ?></strong></span>
+                    </div>
+                </div>
+                <div id="error-shipping_method" class="input-error"></div>
+                <div class="text-center" style="margin-top: 50px;">
+                    <div id="error-submit" class="input-error >"></div>
+                    <button type="submit" id="btn-login" class="btn btn-success btn-lg">
+                        Continue
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>

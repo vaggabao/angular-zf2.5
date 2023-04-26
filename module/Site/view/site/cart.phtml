@@ -1,0 +1,67 @@
+<div class="page-container page-cart-container">
+    <div class="cart-item-list">
+        <div class="list-header">
+            <div class="row">
+                <div class="col-md-8">
+                    <label>Product</label>
+                </div>
+                <div class="col-md-2 text-center">
+                    <label>Quantity</label>
+                </div>
+                <div class="col-md-2 text-center">
+                    <label>Price</label>
+                </div>
+            </div>
+        </div>
+        <?php
+            if (count($items) > 0) {
+                foreach($items as $item) {
+                    echo $this->partial('CART_ITEM', $item);
+                }
+            } else {
+        ?>
+                <div class="text-center">There's nothing in your cart yet.</div>
+        <?php } ?>
+    </div>
+    
+    <?php if (count($items) > 0) { ?>
+        <div class="cart-totals">
+            <div class="row">
+                <div class="col-md-8"></div>
+                <div class="col-md-2">
+                    <span>Subtotal</span>
+                </div>
+                <div class="col-md-2 text-center">
+                    <span>$<?= number_format($subtotal, 2); ?></span>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-8"></div>
+                <div class="col-md-2">
+                    <span>Shipping</span>
+                </div>
+                <div class="col-md-2 text-center">
+                    <span>$<?= number_format($shipping, 2); ?></span>
+                </div>
+            </div>
+            
+            <div class="row row-grand-total">
+                <div class="col-md-8"></div>
+                <div class="col-md-2">
+                    <span><strong>Grand Total</strong></span>
+                </div>
+                <div class="col-md-2 text-center">
+                    <span><strong>$<?= number_format($grand_total, 2); ?></strong></span>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-8"></div>
+                <div class="col-md-4 text-center">
+                    <a href="/shipping" class="btn btn-success btn-lg" style="width: 100%;">Checkout</a>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+</div>

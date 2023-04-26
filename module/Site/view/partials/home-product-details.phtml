@@ -1,0 +1,29 @@
+<div class="product product-<?= $product_id; ?>">
+    <input type="hidden" class="input-product-id" value="<?= $product_id; ?>" />
+    <div class="row">
+        <div class="col-md-4 text-center product-image">
+            <img src="<?= $this->basePath('img/products/thumb/' . $product_thumbnail); ?>" alt="<?= $product_name; ?>" 
+                height="200">
+        </div>
+        <div class="col-md-8 product-details">
+            <div class="row product-name">
+                <label class="col-xs-4 text-right">Product Name: </label>
+                <span class="col-xs-6"><?= $product_name; ?></span>
+            </div>
+            <div class="row product-desc">
+                <label class="col-xs-4 text-right">Product Description: </label>
+                <span class="col-xs-6"><?= $product_desc; ?></span>
+            </div>
+            <div class="row product-price">
+                <label class="col-xs-4 text-right">Price: </label>
+                <span class="col-xs-6 text-large"><strong>&dollar;<?= number_format($price, 2); ?></strong></span>
+            </div>
+            <?php if ($stock_qty == 0) { ?>
+                <div class="row product-oos">
+                    <label class="col-xs-4"></label>
+                    <span class="col-xs-6">Out of Stock</span>
+                </div>
+            <?php } ?>
+        </div>
+    </div>
+</div>

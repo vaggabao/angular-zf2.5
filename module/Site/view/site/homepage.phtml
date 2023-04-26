@@ -1,0 +1,11 @@
+<?php $this->inlineScript()->prependFile($this->basePath('js/home.js')); ?>
+
+<div class="page-container page-home-container">
+    <div class="product-list">
+        <?php
+            foreach($products as $product) {
+                echo $this->partial('HOME_PRODUCT_DETAILS', $product);
+            }
+        ?>
+    </div>
+</div>

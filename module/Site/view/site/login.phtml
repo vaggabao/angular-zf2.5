@@ -1,0 +1,73 @@
+<?php
+    $this->inlineScript()->prependFile($this->basePath('js/helpers.js'));
+    $this->inlineScript()->prependFile($this->basePath('js/login.js'));
+?>
+
+<div class="page-container page-login-container">
+    <input type="hidden" id="input-redirect" value="<?= $redirect; ?>" />
+    <div class="page-title">Login / Register</div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <form id="form-register">
+                <div class="form-group">
+                    <label for="input-email">Email</label>
+                    <input type="text" id="input-email" class="form-control" />
+                    <div id="error-email" class="input-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="input-password">Password</label>
+                    <input type="password" id="input-password" class="form-control" />
+                    <div id="error-password" class="input-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="input-confirm-password">Confirm Password</label>
+                    <input type="password" id="input-confirm-password" class="form-control" />
+                    <div id="error-confirm_password" class="input-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="input-company-name">Company Name</label>
+                    <input type="text" id="input-company-name" class="form-control" />
+                    <div id="error-company_name" class="input-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="input-first-name">First Name</label>
+                    <input type="text" id="input-first-name" class="form-control" />
+                    <div id="error-first_name" class="input-error"></div>
+                </div>
+                <div class="form-group">
+                    <label for="input-last-name">Last Name</label>
+                    <input type="text" id="input-last-name" class="form-control" />
+                    <div id="error-last_name" class="input-error"></div>
+                </div>
+                <div class="text-center">
+                    <div id="error-submit" class="input-error text-center"></div>
+                    <button type="submit" id="btn-register" class="btn btn-success btn-lg">
+                        Register
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            <form id="form-login">
+                <div class="form-group">
+                    <label for="input-login-email">Email</label>
+                    <input type="text" id="input-login-email" class="form-control" />
+                    <div id="error-login-email" class="input-error">Email is required.</div>
+                </div>
+                <div class="form-group">
+                    <label for="input-login-password">Password</label>
+                    <input type="password" id="input-login-password" class="form-control" />
+                    <div id="error-login-password" class="input-error">Password is required</div>
+                </div>
+                <div class="text-center">
+                    <div id="error-login-login" class="input-error text-center">Invalid email or password</div>
+                    <button type="submit" id="btn-login" class="btn btn-success btn-lg">
+                        Login
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

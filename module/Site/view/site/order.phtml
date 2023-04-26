@@ -1,0 +1,85 @@
+<?php
+    $shippingAddressLines = $order['shipping_address1'];
+    if (!empty($order['shipping_address2'])) {
+        $shippingAddressLines .= " " . $order['shipping_address2'];
+    }
+    if (!empty($order['shipping_address3'])) {
+        $shippingAddressLines .= " " . $order['shipping_address3'];
+    }
+?>
+<div class="page-container page-order-container">
+    <div class="row shipping-details">
+        <div class="col-md-6">
+            <strong>Order Id# <?= $order['job_order_id']; ?></strong>
+        </div>
+        <div class="col-md-6">
+            <p><strong>Ship To: </strong></p>
+            <p><strong><?= $order['shipping_name']; ?></strong></p>
+            <p><?= $shippingAddressLines; ?></p>
+            <p><?= $order['shipping_city'] . ", " . $order['shipping_state'] . " " . $order['shipping_country']; ?></p>
+        </div>
+    </div>
+    <div class="order-item-list">
+        <div class="list-header">
+            <div class="row">
+                <div class="col-md-8">
+                    <label>Product</label>
+                </div>
+                <div class="col-md-2 text-center">
+                    <label>Quantity</label>
+                </div>
+                <div class="col-md-2 text-center">
+                    <label>Price</label>
+                </div>
+            </div>
+        </div>
+        <?php
+            if (count($items) > 0) {
+                foreach($items as $item) {
+                    echo $this->partial('CART_ITEM', $item);
+                }
+            }
+        ?>
+    </div>
+    
+    <?php if (count($items) > 0) { ?>
+        <div class="order-totals">
+            <div class="row">
+                <div class="col-md-8"></div>
+                <div class="col-md-2">
+                    <span>Subtotal</span>
+                </div>
+                <div class="col-md-2 text-center">
+                    <span>$<?= number_format($order['sub_total'], 2); ?></span>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-8"></div>
+                <div class="col-md-2">
+                    <span>Shipping</span>
+                </div>
+                <div class="col-md-2 text-center">
+                    <span>$<?= number_format($order['shipping_total'], 2); ?></span>
+                </div>
+            </div>
+            
+            <div class="row row-grand-total">
+                <div class="col-md-8"></div>
+                <div class="col-md-2">
+                    <span><strong>Grand Total</strong></span>
+                </div>
+                <div class="col-md-2 text-center">
+                    <span><strong>$<?= number_format($order['total_amount'], 2); ?></strong></span>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-8"></div>
+                <div class="col-md-4 text-center">
+                    <a href="/" class="btn btn-success btn-lg" style="width: 100%;">Continue Shopping</a>
+                </div>
+            </div>
+        </div>
+    <?php } ?>
+</div>

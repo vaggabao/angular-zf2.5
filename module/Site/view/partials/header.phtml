@@ -1,0 +1,23 @@
+<header>
+    <div class="container">
+        <div class="row top-nav">
+            <div class="col-md-6">
+                <a href="/">
+                    <img src="<?= $this->basePath('img/logo.svg') ?>" alt="ZF2.5 Exam" width="300"/>
+                </a>
+            </div>
+            <div class="col-md-6 text-right">
+                <?php if ($login_status === 0) { ?>
+                    <a href="/login">Login</a>
+                <?php } else { ?>
+                    <span>Welcome Back <?= $customer['first_name']; ?></span>
+                    &nbsp;|&nbsp;
+                    <a href="/logout">Logout</a>
+                <?php } ?>
+                &nbsp;|&nbsp;
+                <a href="/cart">Cart</a>
+            </div>
+        </div>
+        <hr/>
+    </div>
+</header>

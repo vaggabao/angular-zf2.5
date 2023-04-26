@@ -1,0 +1,9 @@
+<?php
+$config = $this->layout()->getVariable('config');
+$this->inlineScript()->prependFile($config['static_url'] .'/assets/scripts_min/headjs_loaders/page-404-scripts.min.js' . $config['static_version']);
+?>
+<div class="page-custom-404-container container">
+    <div class="404-image-container row">
+        <img class="404-image" alt="404 Banner" src="<?=$config['static_image_path']?>/404/404-banner.jpg" width="100%">
+    </div>
+</div>

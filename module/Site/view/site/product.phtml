@@ -1,0 +1,65 @@
+<?php
+    $this->inlineScript()->prependFile($this->basePath('js/helpers.js'));
+    $this->inlineScript()->prependFile($this->basePath('js/product.js'));
+?>
+
+<div class="page-container page-product-container">
+    <div class="product product-<?= $product_id; ?>">
+        <input type="hidden" id="input-product-id" value="<?= $product_id; ?>" />
+        <input type="hidden" id="input-product-price" value="<?= $price; ?>" />
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <img class="product-image"
+                        src="<?= $this->basePath('img/products/' . $product_image); ?>"
+                        alt="<?= $product_name; ?>">
+            </div>
+            <div class="col-md-6 product-details">
+                <div class="row">
+                    <label class="col-xs-4 text-right">Product Name: </label>
+                    <span class="col-xs-6"><?= $product_name; ?></span>
+                </div>
+                <div class="row">
+                    <label class="col-xs-4 text-right">Product Description: </label>
+                    <span class="col-xs-6"><?= $product_desc; ?></span>
+                </div>
+                <div class="row">
+                    <label class="col-xs-4 text-right">Unit Price: </label>
+                    <span class="col-xs-6">&dollar;<?= number_format($price, 2); ?></span>
+                </div>
+                <div class="row">
+                    <label class="col-xs-4 text-right">Quantity: </label>
+                    <span class="col-xs-6">
+                        <input type="number"
+                                id="input-qty"
+                                class="form-control input-sm input-qty"
+                                min="0"
+                                max="<?= $stock_qty; ?>"
+                                value="<?= $stock_qty > 0 ? 1 : 0; ?>"
+                                <?= $stock_qty <= 0 ? "disabled" : ""; ?> />
+                    </span>
+                </div>
+                <div class="row row-total-price">
+                    <label class="col-xs-4 text-right">Price: </label>
+                    <span class="col-xs-6 text-large">
+                        <strong>
+                            &dollar;<span id="total-price"><?= number_format($price, 2); ?></span>
+                        </strong>
+                    </span>
+                </div>
+                    <div class="row">
+                        <div class="col-xs-12 text-right">
+                            <?php if ($stock_qty == 0) { ?>
+                                <span class="product-oos">Out of Stock</span>
+                            <?php } else { ?>
+                                <button type="button"
+                                        id="btn-add-to-cart"
+                                        class="btn btn-success btn-large">
+                                    Add to Cart
+                                </button>
+                            <?php } ?>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
